@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bus_app/views/bus_list_view.dart';
+import 'package:bus_app/views/airport_line_view.dart';
 
 
 class HomeView extends StatelessWidget {
