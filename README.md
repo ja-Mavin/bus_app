@@ -18,7 +18,9 @@ Making bus travel in Laos easier.
 
 Developed by a Lao middle school student born in Nagoya, Japan. This Flutter app aims to support public transport in Laos, starting with the Vientiane Airport Shuttle route.
 
-# Flutter
-# Laos
-# Traffic
-# Student
+---
+Tags:   # Flutter 
+        # Laos
+        # Vientiane 
+        # BusNavi 
+        # JuniorHighStudent
