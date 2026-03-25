@@ -1,17 +1,24 @@
-# bus_app
+    ---日本語---
+    
+ラオスのバスを、もっと便利に。
 
-A new Flutter project.
+名古屋生まれのラオス人中学生が、故郷ラオスの交通を支えるために開発しているFlutterアプリです。
+まずはビエンチャンの空港シャトルバスから形にしています！
 
-## Getting Started
+    ---ລາວ---
+    
+ເຮັດໃຫ້ການຂຶ້ນລົດເມຢູ່ວຽງຈັນສະດວກສະບາຍຂຶ້ນ.
 
-This project is a starting point for a Flutter application.
+ແອັບນີ້ຖືກພັດທະນາໂດຍນັກຮຽນລາວທີ່ເກີດຢູ່ເມືອງນາໂກຢ້າ, ເພື່ອຊ່ວຍເຫຼືອການເດີນທາງໃນປະເທດລາວ. 
+ເລີ່ມຕົ້ນຈາກສາຍລົດເມສະໜາມບິນວັດໄຕ!
 
-A few resources to get you started if this is your first Flutter project:
+    ---ENGLISH---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Making bus travel in Laos easier.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Developed by a Lao middle school student born in Nagoya, Japan. This Flutter app aims to support public transport in Laos, starting with the Vientiane Airport Shuttle route.
+
+# Flutter
+# Laos
+# Traffic
+# Student
