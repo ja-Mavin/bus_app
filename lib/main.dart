@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bus_app/views/home_view.dart';
 
 void main() {
   
@@ -23,59 +24,10 @@ class LaoBusApp extends StatelessWidget {
       
       ),
       
-      home: const BusListPage(),
+      home: const HomeView(),
+
     
     );
   }
 }
 
-class BusListPage extends StatelessWidget {
-  
-  const BusListPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    
-    final busStops = [
-
-      'Talat Sao (Central Bus Station)',
-      'ITECC Mall',
-      'Patuxay Park',
-      'Wattay Airport',
-      'Northern Bus Terminal',
-
-    ];
-    
-    return Scaffold(
-    
-      appBar: AppBar(
-      
-        title: const Text('Lao Bus'),
-        backgroundColor: Colors.blueAccent,
-      
-      ),
-      
-      body: ListView.builder(
-      
-        itemCount: busStops.length,
-        itemBuilder: (context, index) {
-        
-          return ListTile(
-          
-            leading: const Icon(Icons.bus_alert, color: Colors.blue,),
-            title: Text(busStops[index]),
-            onTap: () {
-            
-              print("${busStops[index]} がタップされました");
-            
-            },
-          
-          );
-        
-        },
-      
-      ),
-    
-    );
-  }
-}
