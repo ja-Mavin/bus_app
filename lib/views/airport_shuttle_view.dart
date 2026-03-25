@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bus_app/bus_stops_data/airport_line_data.dart';
+import 'package:bus_app/bus_list_data.dart';
 
 class BusListView extends StatelessWidget {
   
@@ -7,6 +7,11 @@ class BusListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final displayStops = BusListData.stops
+      
+      .where((stop) => stop.busNumber == 'Airport Shuttle')
+      .toList(); // 1つ分のデータを取り出す
     
     return Scaffold(
     
@@ -19,21 +24,21 @@ class BusListView extends StatelessWidget {
       
       body: ListView.builder(
       
-        itemCount: BusListData.stops.length,
+        itemCount: displayStops.length,
         
         itemBuilder: (context, index) {
 
-          final stop = BusListData.stops[index]; // 1つ分のデータを取り出す
+          final stops = displayStops[index]; // 1つ分のデータを取り出す
           
           return ListTile(
           
             leading: const Icon(Icons.airplanemode_active, color: Colors.blue,),
-            title: Text(stop.name, style: const TextStyle(fontWeight: FontWeight.bold),),
-            subtitle: Text(stop.laoName),
+            title: Text(stops.name, style: const TextStyle(fontWeight: FontWeight.bold),),
+            subtitle: Text(stops.laoName),
             
             onTap: () {
               
-              print("${stop.name} がタップされました");
+              print("${stops.name} がタップされました");
               
             },
           
