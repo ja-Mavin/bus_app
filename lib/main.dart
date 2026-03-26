@@ -4,23 +4,29 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class Stop {
+  final int stopId;
   final String enName;
   final String laoName;
   final String jpName;
-  final int stopId;
-  final String lineNumber;
+  final List<dynamic> lines;
+  final Map<String, dynamic> orderInLine;
 
-  Stop( this.stopId, this.enName, this.laoName, this.jpName, this.lineNumber);
+  Stop(this.stopId, this.enName, this.laoName, this.jpName, this.lines, this.orderInLine);
 
   factory Stop.fromJson(Map<String, dynamic> json) {
-    return Stop(
-      json['stopId'] as int? ?? 0,
-      json['enName'] as String? ?? '',
-      json['laoName'] as String? ?? '',
-      json['jpName'] as String? ?? '',
-      json['lineNumber'] as String? ?? '',
-    );
-  }
+  return Stop(
+    json['stopId'] as int? ?? 0,
+    json['enName'] as String? ?? '',
+    json['laoName'] as String? ?? '',
+    json['jpName'] as String? ?? '',
+    // もしリストじゃなくても空のリストにする
+    json['lines'] is List ? json['lines'] as List : [],
+    // もしマップじゃなくても空のマップにする
+    json['orderInLine'] is Map<String, dynamic>
+        ? json['orderInLine'] as Map<String, dynamic>
+        : {},
+  );
+}
 }
 
 Future<List<Stop>> loadBusStops() async {
@@ -48,7 +54,6 @@ class LaoBusApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lao Bus',
       theme: ThemeData(
-
         popupMenuTheme: const PopupMenuThemeData(
           labelTextStyle: WidgetStatePropertyAll(
             const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 0, 0))

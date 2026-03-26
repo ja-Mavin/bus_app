@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bus_app/views/airport_shuttle_view.dart';
+import 'package:bus_app/views/brt_view.dart';
 
 
 class HomeView extends StatelessWidget {
@@ -59,13 +59,13 @@ class HomeView extends StatelessWidget {
               
               onPressed: () {
                 
-                Navigator.push(  
-                  context,
-                  MaterialPageRoute(builder: (context) => AirportShuttleView()),
-                );
+                //Navigator.push(  
+                //  context,
+                //  MaterialPageRoute(builder: (context) => const BRTView()),
+                //);
               },
               icon: const Icon(Icons.airplanemode_active),
-              label: const Text('Airport Shuttle'),
+              label: const Text('Under Construction...'),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(250,50),
               textStyle: 
@@ -78,13 +78,13 @@ class HomeView extends StatelessWidget {
             ElevatedButton.icon( // Number 14 Lineへの遷移ボタン
               
               onPressed: () {
-                Navigator.push(  
-                   context,
-                   MaterialPageRoute(builder: (context) => AirportShuttleView()),
-                );
+                //Navigator.push(  
+                //   context,
+                 //  MaterialPageRoute(builder: (context) => const BRTView()),
+               // );
               },
               icon: const Icon(Icons.directions_bus),
-              label: const Text('Number 14 Line'),
+              label: const Text('Under Construction...'),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(250,50),
               textStyle: 
@@ -99,7 +99,7 @@ class HomeView extends StatelessWidget {
               onPressed: () {
                 Navigator.push(  
                    context,
-                   MaterialPageRoute(builder: (context) => AirportShuttleView()),
+                   MaterialPageRoute(builder: (context) => const BRTView()),
                 );
               },
               icon: const Icon(Icons.directions_bus),
