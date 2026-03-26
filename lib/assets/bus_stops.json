@@ -1,49 +1,26 @@
 [
-    {
-        "enName": "Wattay International Airport",
-        "laoName": "ສະໜາມບິນວັດໄຕ",
-        "jpName": "ワットタイ国際空港",
-        "stopId": 1,
-        "lineNumber": "Airport Shuttle"
-    },
-
-    {
-        "enName": "Sikhay Junction",
-        "laoName": "ສີ່ແຍກສີໄຄ",
-        "jpName": "シカイ・ジャンクション",
-        "stopId": 2,
-        "lineNumber": "Airport Shuttle"
-    },
-
-    {
-        "enName": "Fa Ngum Statue",
-        "laoName": "ອະນຸສາວະລີ ເຈົ້າຟ້າງຸ່ມ",
-        "jpName": "ファ・ングム像",
-        "stopId": 3,
-        "lineNumber": "Airport Shuttle"
-    },
-
-    {
-        "enName": "Mixay Temple",
-        "laoName": "ວັດມີໄຊ",
-        "jpName": "ミサイ寺",
-        "stopId": 4,
-        "lineNumber": "Airport Shuttle"
-    },
-
-    {
-        "enName": "Nam Phou Fountain",
-        "laoName": "ນ້ຳພຸ",
-        "jpName": "ナンプー噴水広場",
-        "stopId": 5,
-        "lineNumber": "Airport Shuttle"
-    },
-
-    {
-        "enName": "Talat Sao (CBS)",
-        "laoName": "ຕະຫຼາດເຊົ້າ",
-        "jpName": "タラート・サオ（中央）",
-        "stopId": 6,
-        "lineNumber": "Airport Shuttle"
-    }
+    {"stopId":1,"enName":"Wattay International Airport","laoName":"ສະໜາມບິນວັດໄຕ","jpName":"ワットタイ国際空港","lineNumber":["Airport Shuttle", "BRT"]},
+    {"stopId":2,"enName":"Sikhay Junction", "laoName":"ສີ່ແຍກສີໄຄ","jpName":"シカイ・ジャンクション","lineNumber": "Airport Shuttle"},
+    {"stopId":3,"enName": "Fa Ngum Statue","laoName": "ອະນຸສາວະລີ ເຈົ້າຟ້າງຸ່ມ","jpName": "ファ・ングム像","lineNumber": "Airport Shuttle"},
+    {"stopId":4,"enName":"Mixay Temple","laoName":"ວັດມີໄຊ","jpName":"ミサイ寺","lineNumber":"Airport Shuttle"},
+    {"stopId":5,"enName":"Nam Phou Fountain","laoName":"ນ້ຳພຸ","jpName":"ナンプー噴水広場","lineNumber":"Airport Shuttle"},
+    {"stopId":6,"enName":"Talat Sao (CBS)","laoName":"ຕະຫຼາດເຊົ້າ","jpName":"タラート・サオ（中央）","lineNumber":["Airport Shuttle", "BRT"]},
+    {"stopId":7,"enName":"Dongdok Station","laoName":"ສະຖານີດົງໂດກ","jpName":"ドンドック駅（国立大学前）","lineNumber":"BRT"},
+    {"stopId":8,"enName":"Xiangkhouang","laoName":"ຊຽງຄວາງ","jpName":"シエンクワン","lineNumber":"BRT"},
+    {"stopId":9,"enName":"Saphangmeuk","laoName":"ສະພັງໝຶກ","jpName":"サパンムック","lineNumber":"BRT"},
+    {"stopId":10,"enName":"Huayhong","laoName":"ຫ້ວຍຫົງ","jpName":"フアイホン","lineNumber":"BRT"},
+    {"stopId":11,"enName":"Tanmixay","laoName":"ຕານມີໄຊ","jpName":"タンミーサイ","lineNumber":"BRT"},
+    {"stopId":12,"enName":"450 Year Road","laoName":"ຖະໜົນ 450 ປີ","jpName":"450周年道路","lineNumber":"BRT"},
+    {"stopId":13,"enName":"SOS School","laoName":"ໂຮງຮຽນ ເອັສໂອເອັສ","jpName":"SOS学校前","lineNumber":"BRT"},
+    {"stopId":14,"enName":"Nongviengkham","laoName":"ໜອງວຽງຄໍາ","jpName":"ノンヴィエンカム","lineNumber":"BRT"},
+    {"stopId":15,"enName":"Dongpalane Thong","laoName":"ດົງປາລານທົ່ງ","jpName":"ドンパラーン・トン","lineNumber":"BRT"},
+    {"stopId":16,"enName":"Kaysone Phomvihane Museum","laoName":"ຫໍພິພິທະພັນ ໄກສອນ ພົມວິຫານ","jpName":"カイソーン・ポムウィハーン博物館","lineNumber":"BRT"},
+    {"stopId":17,"enName":"ICTC Center","laoName":"ສູນໄອຊີທີຊີ","jpName":"ICTCセンター（国際会議場）","lineNumber":"BRT"},
+    {"stopId":18,"enName":"Phonphanao","laoName":"ພົນພະເນົາ","jpName":"ポンパナオ","lineNumber":"BRT"},
+    {"stopId":19,"enName":"Phonkheng","laoName":"ພົນເຄັງ","jpName":"ポンケン","lineNumber":"BRT"},
+    {"stopId":20,"enName":"Panyathip","laoName":"ປັນຍາທິບ","jpName":"パンヤーティップ（学校）","lineNumber":"BRT"},
+    {"stopId":21,"enName":"Patuxay Monument","laoName":"ປະຕູໄຊ","jpName":"パトゥーサイ（勝利の門）","lineNumber":"BRT"},
+    {"stopId":22,"enName":"That Foun","laoName":"ທາດຝຸ່ນ","jpName":"タート・フン","lineNumber":"BRT"},
+    {"stopId":23,"enName":"Lycée de Vientiane","laoName":"ໂຮງຮຽນ ມັດທະຍົມ ວຽງຈັນ","jpName":"ヴィエンチャン高校","lineNumber":"BRT"},
+    {"stopId":24,"enName":"Khoun Boulom","laoName":"ຂຸນບູລົມ","jpName":"クン・ブーロム","lineNumber":"BRT"}
 ]

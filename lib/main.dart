@@ -10,14 +10,14 @@ class Stop {
   final int stopId;
   final String lineNumber;
 
-  Stop(this.enName, this.laoName, this.jpName, this.stopId, this.lineNumber);
+  Stop( this.stopId, this.enName, this.laoName, this.jpName, this.lineNumber);
 
   factory Stop.fromJson(Map<String, dynamic> json) {
     return Stop(
+      json['stopId'] as int? ?? 0,
       json['enName'] as String? ?? '',
       json['laoName'] as String? ?? '',
       json['jpName'] as String? ?? '',
-      json['stopId'] as int? ?? 0,
       json['lineNumber'] as String? ?? '',
     );
   }

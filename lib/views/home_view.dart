@@ -92,6 +92,25 @@ class HomeView extends StatelessWidget {
               ),
             ),
     
+            const SizedBox(height: 20), // ★文字とボタンの間の「スキマ」を作る
+
+            ElevatedButton.icon( // BRTへの遷移ボタン
+              
+              onPressed: () {
+                Navigator.push(  
+                   context,
+                   MaterialPageRoute(builder: (context) => AirportShuttleView()),
+                );
+              },
+              icon: const Icon(Icons.directions_bus),
+              label: const Text('BRT'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(250,50),
+              textStyle: 
+                const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ),
+
           ],
   
         ),
