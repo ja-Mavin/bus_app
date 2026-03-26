@@ -106,6 +106,8 @@ class HomeView extends StatelessWidget {
               label: const Text('BRT'),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(250,50),
+                backgroundColor: const Color(0xFFFFB300),
+                foregroundColor: Colors.black,
               textStyle: 
                 const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
