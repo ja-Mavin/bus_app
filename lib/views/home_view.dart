@@ -61,7 +61,7 @@ class HomeView extends StatelessWidget {
                 
                 Navigator.push(  
                   context,
-                  MaterialPageRoute(builder: (context) => const AirportShuttleView()),
+                  MaterialPageRoute(builder: (context) => AirportShuttleView()),
                 );
               },
               icon: const Icon(Icons.airplanemode_active),
@@ -80,7 +80,7 @@ class HomeView extends StatelessWidget {
               onPressed: () {
                 Navigator.push(  
                    context,
-                   MaterialPageRoute(builder: (context) => const AirportShuttleView()),
+                   MaterialPageRoute(builder: (context) => AirportShuttleView()),
                 );
               },
               icon: const Icon(Icons.directions_bus),
