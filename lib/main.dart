@@ -19,6 +19,12 @@ class LaoBusApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lao Bus',
       theme: ThemeData(
+
+        popupMenuTheme: const PopupMenuThemeData(
+          labelTextStyle: WidgetStatePropertyAll(
+            const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 0, 0))
+          ),
+        ),
       
         primarySwatch: Colors.blue,
       
