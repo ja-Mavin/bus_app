@@ -1,4 +1,4 @@
-import 'dart:ui';
+
 
 import 'package:flutter/material.dart';
 import 'package:bus_app/main.dart';
@@ -19,7 +19,7 @@ class _BRTViewState extends State<BRTView> {
   }
 
   Future<void> loadData() async {
-    print("--- 読み込み開始 ---");
+    // print("--- 読み込み開始 ---");
     try {
       final data = await loadBusStops();
       //print("--- 読み込み完了！ 件数: ${data.length} ---");
@@ -43,6 +43,9 @@ class _BRTViewState extends State<BRTView> {
       return aOrder.compareTo(bOrder);
     });
 
+    final stStops = displayStops.isNotEmpty ? displayStops.first : null;
+    final endStops = displayStops.isNotEmpty ? displayStops.last : null;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('BRT', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
@@ -50,9 +53,9 @@ class _BRTViewState extends State<BRTView> {
       ),
       body: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.all(12.0),
-            child: Text('Line Details', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text('${stStops?.laoName ?? ''} -> ${endStops?.laoName ?? ''}', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold))
           ),
           Expanded(
             child: ListView.builder(

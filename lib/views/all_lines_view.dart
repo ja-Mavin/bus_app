@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:bus_app/views/all_lines_view.dart';
+import 'package:bus_app/views/brt_view.dart';
 
+class RouteListView extends StatelessWidget {
+  const RouteListView({super.key});
 
-class HomeView extends StatelessWidget {
   
-  const HomeView({super.key});
 
   //↓ボタン量産用の設計図
 
@@ -24,8 +24,7 @@ class HomeView extends StatelessWidget {
     Color col2,
     IconData icon,
     Widget targetPage, 
-    BuildContext context,
-    {double height = 120} // デフォルト値を80に設定
+    BuildContext context
   ) 
 
   { 
@@ -34,7 +33,7 @@ class HomeView extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12.0),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.85,
-        height: height, // アイコンと2行テキストを入れるので少し高めに
+        height: 80, // アイコンと2行テキストを入れるので少し高めに
 
         child: ElevatedButton( // ★ .icon を取って普通のElevatedButtonに
           onPressed: () {
@@ -65,8 +64,8 @@ class HomeView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start, // ★ 文字を左寄せに
                   children: [
-                    Text(lao, style: const TextStyle(fontSize:26, fontWeight: FontWeight.bold)),
-                    Text(eng, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    Text(lao, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    Text(eng, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
@@ -79,81 +78,47 @@ class HomeView extends StatelessWidget {
       )
     );
   }
-
+  
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-    
       appBar: AppBar(
-      
-        title: const Text('Vientiane BusMap', style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold), ),
+        title: const Text('ລາຍຊື່ເສັ້ນທາງ / Route List', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.blueAccent,
-
-        actions: [
-          PopupMenuButton(
-            offset: const Offset(0, 50),
-            constraints: const BoxConstraints(
-              minWidth: 100,
-            ),
-            icon: const Icon(Icons.menu),
-            onSelected: (String result) {
-              // メニューが選択されたときの処理
-              // print("${result}が選択されました");
-
-             },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              const PopupMenuItem<String>(value: 'Language',child: Text('Language')),
-              const PopupMenuItem<String>(value: 'Settings', child: Text('Settings')),
-              const PopupMenuItem<String>(value: 'Help', child: Text('Help')),
-              const PopupMenuItem<String>(value: 'About', child: Text('About')),
-            ],
-          )
-        ],
       ),
-      
-      body: Center( // 画面の真ん中に置くための外枠
+      body: Center(
         
         child: Column(
-    
-          mainAxisAlignment: MainAxisAlignment.center, // 縦方向の真ん中に寄せる
-          
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            
+
+            const SizedBox(height: 20),
+
             const Text(
-              
-              'Home',
-              style: TextStyle(fontSize: 24), // 少し大きくすると見やすくなります
+              'ລາຍຊື່ເສັ້ນທາງ',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+            const SizedBox(height: 20),
             
-            ),
-            
-            const SizedBox(height: 20), // ★文字とボタンの間の「スキマ」を作る
-
             createStationButton(
-              "ລາຍຊື່ເສັ້ນທາງ", 
-              "Route List", 
-              Colors.blueAccent, 
-              Colors.white, 
-              Icons.format_list_bulleted, 
-              const RouteListView(), context
+              "ບີອາທີ (ລະບົບລົດເມດ່ວນ)", 
+              "BRT (Bus Rapid Transit)", 
+              Colors.amber, 
+              Colors.black,
+              Icons.directions_bus,
+              const BRTView(), context
             ),
 
             createStationButton(
-              "ວິທີໃຊ້ແອັບ", 
-              "How to use the App", 
-              Colors.grey.shade300, 
-              Colors.black87, 
-              Icons.info, 
-              const RouteListView(), context,
-              height: 80
+              "ລົດເມຂົນສົ່ງສະໜາມບິນ", 
+              "Airport Shuttle", 
+              Colors.blue, 
+              Colors.white,
+              Icons.directions_bus, 
+              const BRTView(), context
             )
 
           ],
-  
         ),
-      
       ),
-
     );
   }
 }
