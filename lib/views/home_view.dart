@@ -1,159 +1,83 @@
 import 'package:flutter/material.dart';
-import 'package:bus_app/views/all_lines_view.dart';
+import 'package:bus_app/views/all_stops_view.dart'; // BRTの画面を呼び出すためにインポート
 
+void main() {
+  runApp(const HomeView());
+}
 
 class HomeView extends StatelessWidget {
-  
   const HomeView({super.key});
-
-  //↓ボタン量産用の設計図
-
-  //  creatingStationButton(
-  //    "<<ラオ語>>", 
-  //    "<<英語>>",  
-  //    Colors.<<~~>>,
-  //    IconData <<~~>>,
-  //    const <<遷移先のページクラス>>(), context,
-  //  ),
-
-
-  Widget createStationButton(
-    String lao, 
-    String eng, 
-    Color col1, 
-    Color col2,
-    IconData icon,
-    Widget targetPage, 
-    BuildContext context,
-    {double height = 120} // デフォルト値を80に設定
-  ) 
-
-  { 
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.85,
-        height: height, // アイコンと2行テキストを入れるので少し高めに
-
-        child: ElevatedButton( // ★ .icon を取って普通のElevatedButtonに
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => targetPage),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: col1,
-            foregroundColor: col2,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          ),
-          // ★ ここからがアイコン固定の仕掛け
-          child: Row(
-            children: [
-              // 1. アイコン固定エリア（幅を45に固定）
-              SizedBox(
-                width: 45, 
-                child: Icon(icon, size: 30), // 引数のアイコンを表示
-              ),
-              
-              const SizedBox(width: 15), // アイコンと文字の間の隙間
-
-              // 2. テキストエリア（残りの幅を全部使う）
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start, // ★ 文字を左寄せに
-                  children: [
-                    Text(lao, style: const TextStyle(fontSize:26, fontWeight: FontWeight.bold)),
-                    Text(eng, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  ],
-                ),
-              ),
-              
-              // 3. 右端の矢印（これがあると一気にアプリっぽくなります）
-              const Icon(Icons.arrow_forward_ios, size: 16),
-            ],
-          ),
-        ),
-      )
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
-    
+    return MaterialApp(
+      // 右上のDEBUG帯を消す
+      debugShowCheckedModeBanner: false,
+      title: 'Vientiane BusMap',
+      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-    
       appBar: AppBar(
-      
-        title: const Text('Vientiane BusMap', style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold), ),
-        backgroundColor: Colors.blueAccent,
-
-        actions: [
-          PopupMenuButton(
-            offset: const Offset(0, 50),
-            constraints: const BoxConstraints(
-              minWidth: 100,
-            ),
-            icon: const Icon(Icons.menu),
-            onSelected: (String result) {
-              // メニューが選択されたときの処理
-              // print("${result}が選択されました");
-
-             },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              const PopupMenuItem<String>(value: 'Language',child: Text('Language')),
-              const PopupMenuItem<String>(value: 'Settings', child: Text('Settings')),
-              const PopupMenuItem<String>(value: 'Help', child: Text('Help')),
-              const PopupMenuItem<String>(value: 'About', child: Text('About')),
-            ],
-          )
-        ],
-      ),
-      
-      body: Center( // 画面の真ん中に置くための外枠
-        
-        child: Column(
-    
-          mainAxisAlignment: MainAxisAlignment.center, // 縦方向の真ん中に寄せる
-          
-          children: [
-            
-            const Text(
-              
-              'Home',
-              style: TextStyle(fontSize: 24), // 少し大きくすると見やすくなります
-            
-            ),
-            
-            const SizedBox(height: 20), // ★文字とボタンの間の「スキマ」を作る
-
-            createStationButton(
-              "ລາຍຊື່ເສັ້ນທາງ", 
-              "Route List", 
-              Colors.blueAccent, 
-              Colors.white, 
-              Icons.format_list_bulleted, 
-              const RouteListView(), context
-            ),
-
-            createStationButton(
-              "ວິທີໃຊ້ແອັບ", 
-              "How to use the App", 
-              Colors.grey.shade300, 
-              Colors.black87, 
-              Icons.info, 
-              const RouteListView(), context,
-              height: 80
-            )
-
-          ],
-  
+        title: const Text('Vientiane BusMap'),
+        centerTitle: true,
+        backgroundColor: Colors.blue[100],
+        // AppBarとbodyの間の線
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1.0),
+          child: Container(color: Colors.grey[300], height: 1.0),
         ),
-      
       ),
+      // ノッチを避けるためのSafeArea
+      body: SafeArea(
+        child: Column(
+          children: [
+            // 1. メインエリア（広がる部分）
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Hello, Vientiane!",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
 
+                    SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AllStopsView(),
+                          ),
+                        );
+                      },
+                      child: const Text('ທຸກສະຖານີ / All Stations'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
