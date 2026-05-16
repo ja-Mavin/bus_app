@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+//import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 // 自分で作ったファイルをインポートします
-import 'views/home_view.dart'; 
+import 'views/home_view.dart';
 
 void main() {
   runApp(const VientianeBusMap());
@@ -16,7 +17,7 @@ class VientianeBusMap extends StatelessWidget {
       debugShowCheckedModeBanner: false, // 右上の「DEBUG」ラベルを消す
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue, // 好きな色をベースに設定
+        colorSchemeSeed: Colors.blueAccent, // 好きな色をベースに設定
       ),
       home: const HomeView(), // ここで views/home_view.dart を呼び出す
     );

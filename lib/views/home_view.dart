@@ -1,5 +1,8 @@
+//import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:bus_app/views/all_stops_view.dart'; // BRTの画面を呼び出すためにインポート
+import 'package:bus_app/widgets/home_button_template.dart';
+import 'package:bus_app/views/lines/brt_view.dart';
+// import 'package:bus_app/views/all_stops_view.dart'; // BRTの画面を呼び出すためにインポート
 
 void main() {
   runApp(const HomeView());
@@ -43,39 +46,49 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       // ノッチを避けるためのSafeArea
       body: SafeArea(
-        child: Column(
-          children: [
-            // 1. メインエリア（広がる部分）
-            Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Hello, Vientiane!",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-
-                    SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const AllStopsView(),
-                          ),
-                        );
-                      },
-                      child: const Text('ທຸກສະຖານີ / All Stations'),
-                    ),
-                  ],
-                ),
+        // 💡 Center と Column のシンプルな組み合わせにします
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min, // Column自体を中身のサイズにギュッと縮める
+            children: [
+              const Text(
+                "Hello, Vientiane!",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-            ),
-          ],
+
+              const SizedBox(height: 16),
+
+              const Text(
+                "Welcome to the Vientiane BusMap App.",
+                style: TextStyle(fontSize: 16),
+              ),
+
+              const SizedBox(height: 16),
+
+              // BRTにつながるボタン
+              toBuslines_Button(
+                text: "BRT Bus Lines",
+                backgroundColor: const Color(0xFFFFD100), // BRTイエロー
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BrtView()),
+                  );
+                },
+              ),
+
+              const SizedBox(height: 8),
+
+              // ...につながるボタン
+              toBuslines_Button(
+                text: "Other City Bus Lines",
+                onPressed: () {
+                  // ここに遷移のコードを書く
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
